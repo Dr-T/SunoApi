@@ -97,8 +97,9 @@ st.session_state["page"] = 1
 st.session_state["click_image"] = False
 
 with st.sidebar:
-    selected = option_menu(None, [i18n("Music Song Create"), i18n("Music Share Square"), i18n("Music Project Readme"),i18n("Visit Official WebSite")],icons=['music-note', 'music-note-beamed', 'music-note-list'], menu_icon="cast", default_index=0)
-    
+    selected = option_menu(None, [i18n("Music Song Create"), i18n("Music Share Square")],icons=['music-note', 'music-note-beamed', 'music-note-list'], menu_icon="cast", default_index=0)
+# , i18n("Music Project Readme"),i18n("Visit Official WebSite")
+
     if selected == i18n("Music Share Square"):
         st.switch_page("pages/square.py")
     elif selected == i18n("Music Project Readme"):
@@ -108,9 +109,9 @@ with st.sidebar:
         st.page_link("https://sunoapi.net", label=i18n("Visit Official WebSite2"), icon="🌐")
     # print(selected)
 
-st.sidebar.image('https://sunoapi.net/images/wechat.jpg', caption=i18n("Join WeChat Group"))
+# st.sidebar.image('https://sunoapi.net/images/wechat.jpg', caption=i18n("Join WeChat Group"))
 # st.sidebar.image('https://sunoapi.net/images/donate.jpg', caption=i18n("Buy me a Coffee"))
-st.sidebar.markdown(f'<div data-testid="stImageCaption" class="st-emotion-cache-1b0udgb e115fcil0" style="max-width: 100%;"> {i18n("Friendly Link")}</div>', unsafe_allow_html=True)
+# st.sidebar.markdown(f'<div data-testid="stImageCaption" class="st-emotion-cache-1b0udgb e115fcil0" style="max-width: 100%;"> {i18n("Friendly Link")}</div>', unsafe_allow_html=True)
 result = suno_sqlite.query_many("select link,label,status from link where status=0 order by id")
 # print(result)
 # print("\n")
