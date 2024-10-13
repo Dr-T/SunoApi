@@ -115,9 +115,9 @@ with st.sidebar:
 # result = suno_sqlite.query_many("select link,label,status from link where status=0 order by id")
 # print(result)
 # print("\n")
-if result is not None and len(result) > 0:
-    for row in result:
-        st.sidebar.page_link(row[0], label=row[1], icon="🌐")
+# if result is not None and len(result) > 0:
+#     for row in result:
+#         st.sidebar.page_link(row[0], label=row[1], icon="🌐")
 
 col2.title(i18n("Page Title"))
 
